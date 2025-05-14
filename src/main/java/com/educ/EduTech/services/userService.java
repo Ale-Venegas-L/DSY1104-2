@@ -12,17 +12,17 @@ import java.util.List;
 
 public class userService {
     @Autowired
-    private UserRepo userRepo;
+    private static UserRepo userRepo;
 
-    public List<user> findAll(){
+    public static List<user> findAll(){
         return userRepo.findAll();
     }
 
-    public user findByUser(String usrnm){
-        return userRepo.findByUsername(null).get(0);
+    public static user findByUser(String usrnm){
+        return (user) userRepo.findByUsername(null);
     }
     
-    public user saveUser(user usr){
+    public static user saveUser(user usr){
         return userRepo.save(usr);
     }
 
@@ -30,7 +30,8 @@ public class userService {
         return userRepo.save(usr);
     };
 
-    public void deleteUser(String usrnm){
+    public static void deleteUser(String usrnm){
         userRepo.deleteByUsername(usrnm);
     }
+
 }

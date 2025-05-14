@@ -6,12 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-public interface UserRepo extends JpaRepository<user, String>{ 
+public interface UserRepo extends JpaRepository<user, Long>{ 
     List<user> findByUsername(String username);
 
-    @Query("SELECT u from user u where u.email= :email")
-    List<user> findByEmail(String email);
-    
-    void deleteByUsername(String username);
+    String deleteByUsername(String username);
 
 }

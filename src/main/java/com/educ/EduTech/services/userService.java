@@ -19,14 +19,18 @@ public class userService {
     }
 
     public user findByUser(String usrnm){
-        return userRepo.findByUsername(usrnm).get(0);
+        return userRepo.findByUsername(null).get(0);
     }
     
-    public user save(user usr){
+    public user saveUser(user usr){
         return userRepo.save(usr);
     }
 
-    public void delete(String usrnm){
+    public user updateUser(user usr){
+        return userRepo.save(usr);
+    };
+
+    public void deleteUser(String usrnm){
         userRepo.deleteByUsername(usrnm);
     }
 }

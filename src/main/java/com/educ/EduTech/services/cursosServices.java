@@ -14,17 +14,23 @@ public class cursosServices {
     @Autowired
     private static cursosRepo cursosRepo;
 
-    public static List<cursos> findAll() {
+    public List<cursos> findAll() {
         return cursosRepo.findAll();
     }
 
-    public static cursos findById(String id){
+    public cursos findById(String id){
         return (cursos) cursosRepo.findById(id);
     }
 
-    public static void saveCurso(){}
+    public cursos saveCurso(cursos curso){
+        return (cursos) cursosRepo.save(curso);
+    }
 
-    public static void updateCurso(){}
+    public cursos updateCurso(cursos curso){
+        return (cursos) cursosRepo.save(curso);
+    }
 
-    public static void deleteCurso(){}
+    public void deleteCurso(String id){
+        cursosRepo.deleteById(id);
+    }
 }

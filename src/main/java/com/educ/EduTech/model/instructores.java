@@ -1,5 +1,7 @@
 package com.educ.EduTech.model;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,7 +15,7 @@ import lombok.NoArgsConstructor;
 
 public class instructores {
     @Id
-    @OneToMany(mappedBy = "cursos")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int rut_inst;
 
     @Column(nullable = false)
@@ -39,5 +41,8 @@ public class instructores {
 
     @Column(nullable = false)
     private String titulo;
+
+    @OneToMany(mappedBy = "cursos")
+    private List<cursos> cursos;
 }
 

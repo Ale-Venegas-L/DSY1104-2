@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 
 public class cursos {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     @Column

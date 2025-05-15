@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 
 public class user {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String username;
 
     @Column(nullable = false, length = 25)
@@ -23,4 +24,5 @@ public class user {
 
     @Column(nullable = false, length = 9)
     private int telefono;
+
 }

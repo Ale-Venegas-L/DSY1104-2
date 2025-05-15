@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 
 public class contenido {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id_curso;
 
     @Column(nullable = false)

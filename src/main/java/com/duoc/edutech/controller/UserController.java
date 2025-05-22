@@ -24,7 +24,7 @@ public class UserController {
     //agregar
     @PostMapping
     public User agregarUser(@RequestBody User usr){
-        return userService.saveUser(null);
+        return userService.saveUser(usr);
     }
 
     //buscar

@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.duoc.edutech.model.Curso;
 import com.duoc.edutech.model.Material;
 import com.duoc.edutech.repository.MaterialRepo;
 
@@ -21,17 +20,19 @@ public class MaterialService {
         return materialRepo.findAll();
     }
 
-    public Material updateMaterial(Material mtr, Curso crs){
-        Material material = materialRepo.findByCurso(crs);
+    public Material getMaterialById(String id){
+    return materialRepo.findById(id).orElseThrow(() -> new RuntimeException("Material no encontrado"));
+    }
 
-        material.setId(mtr.getId());
+    public Material updateMaterial(Material mtr, String id){
+        Material material = getMaterialById(id);
         material.setCurso(mtr.getCurso());
-
         return materialRepo.save(material);
     }
 
-    public void deleteMaterial(Curso crs){
-        Material material = materialRepo.findByCurso(crs);
+    public void deleteMaterial(String id){
+        Material material = getMaterialById(id);
         materialRepo.delete(material);
     }
+    
 }

@@ -9,7 +9,6 @@ import lombok.Setter;
 @Setter
 public class Curso {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private String idCurso;
 
     @Column(nullable =  false)

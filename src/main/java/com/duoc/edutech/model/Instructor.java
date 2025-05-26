@@ -10,7 +10,6 @@ import lombok.Setter;
 @Setter
 public class Instructor {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private String emailInst;
 
     @Column(nullable =  false)

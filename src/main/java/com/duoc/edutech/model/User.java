@@ -9,7 +9,6 @@ import lombok.Setter;
 @Setter
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private String username;
 
     @Column(nullable =  false)

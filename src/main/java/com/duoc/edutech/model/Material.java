@@ -9,7 +9,6 @@ import lombok.Setter;
 @Setter
 public class Material {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
     @ManyToOne

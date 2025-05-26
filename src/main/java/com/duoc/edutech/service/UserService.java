@@ -19,18 +19,23 @@ public class UserService {
         return userRepo.findAll();
     }
 
+    
     public User updateUser(User usr, String username){
         User user = userRepo.findByUsername(username);
-
+        if (user == null) {
+            throw new RuntimeException("Usuario no encontrado");
+        }
         user.setEmail(usr.getEmail());
         user.setPassword(usr.getPassword());
         user.setNumcel(usr.getNumcel());
-
         return userRepo.save(user);
-    }
+}
 
     public void deleteUser(String username){
         User usr = userRepo.findByUsername(username);
+        if (usr == null) {
+            throw new RuntimeException("Usuario no encontrado");
+        }
         userRepo.delete(usr); 
-    }
+}
 }

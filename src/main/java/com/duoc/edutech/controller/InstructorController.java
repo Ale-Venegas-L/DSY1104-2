@@ -11,25 +11,26 @@ public class InstructorController {
     @Autowired
     private InstructorService instructorService;
     
-    @PostMapping("/instructor")
+    @PostMapping("/api/instructors")
     public Instructor saveInstructor(@RequestBody Instructor instructor){
         return instructorService.saveInstructor(instructor);
     }
 
-    @GetMapping("/instructor")
+    @GetMapping("/api/instructors")
     public List<Instructor> fetchInstructors(){
         return instructorService.fetchInstructors();
     }
 
-    @PutMapping("/instructor/email")
+    @PutMapping("/api/instructors/{email}")
     public Instructor updateInstructor(@RequestBody Instructor instructor, @PathVariable String email){
         return instructorService.updateInstructor(instructor, email);
     }
 
 
-    @DeleteMapping("/instructor/email")
+    @DeleteMapping("/api/instructors/{email}")
     public String deleteInstructor(@PathVariable String email){
         instructorService.deleteInstructor(email);
         return "Instructor eliminado";
     }
+    
 }

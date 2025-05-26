@@ -11,22 +11,22 @@ public class CursoController {
     @Autowired
     private CursoService cursoService;
 
-    @PostMapping("/cursos")
+    @PostMapping("/api/cursos")
     public Curso saveCurso(@RequestBody Curso curso){
         return cursoService.saveCurso(curso);
     }
 
-    @GetMapping("/cursos")
-    public List<Curso> fetchUsers(){
+    @GetMapping("/api/cursos")
+    public List<Curso> fetchCursos(){
         return cursoService.fetchCursos();
     }
 
-    @PutMapping("/cursos/{id}")
+    @PutMapping("/api/cursos/{id}")
     public Curso updateCurso(@RequestBody Curso curso, @PathVariable String id){
         return cursoService.updateCurso(curso, id);
     }
 
-    @DeleteMapping("/cursos/{id}")
+    @DeleteMapping("/api/cursos/{id}")
     public String deleteCurso(@PathVariable String id){
         cursoService.deleteCurso(id);
         return "Curso eliminado";

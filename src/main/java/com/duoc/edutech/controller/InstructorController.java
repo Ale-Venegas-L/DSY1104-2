@@ -13,6 +13,7 @@ public class InstructorController {
     
     @PostMapping("/api/instructors")
     public Instructor saveInstructor(@RequestBody Instructor instructor){
+        System.out.println("Guardando instructor: " + instructor);
         return instructorService.saveInstructor(instructor);
     }
 

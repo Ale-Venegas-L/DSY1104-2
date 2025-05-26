@@ -1,6 +1,8 @@
 package com.duoc.edutech.model;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,24 +14,24 @@ public class Instructor {
     @Id
     private String emailInst;
 
-    @Column(nullable =  false)
+    @Column
     private String pNombre;
 
-    @Column(nullable =  true)
+    @Column
     private String sNombre;
     
-    @Column(nullable =  false)
+    @Column
     private String pApellido;
 
-    @Column(nullable =  false)
+    @Column
     private String mApellido;
 
-    @Column(nullable =  false)
+    @Column
     private String titulo;
 
-    @Column(nullable =  true)
+    @Column
     private int numcel;
 
-    @OneToMany
-    private ArrayList<Curso> cursos;
+    @OneToMany(mappedBy = "instructor")
+    private List<Curso> cursos = new ArrayList<>();
 }

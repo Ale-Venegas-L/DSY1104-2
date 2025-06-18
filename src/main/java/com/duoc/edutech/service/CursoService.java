@@ -11,6 +11,10 @@ public class CursoService {
     @Autowired
     private CursoRepo cursoRepo;
 
+    public Curso findCurso(String id){
+        return cursoRepo.findByIdCurso(id);
+    }
+
     public Curso saveCurso(Curso crs){
         return cursoRepo.save(crs);
     }

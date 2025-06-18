@@ -11,6 +11,10 @@ public class InstructorService {
     @Autowired
     private InstructorRepo instructorRepo;
 
+    public Instructor findInstructor(String email){
+        return instructorRepo.findByEmailInst(email);
+    }
+
     public Instructor saveInstructor(Instructor inst){
         return instructorRepo.save(inst);
     }

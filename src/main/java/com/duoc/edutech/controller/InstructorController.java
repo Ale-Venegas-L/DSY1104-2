@@ -12,7 +12,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
-@RequestMapping("/api/instructors/")
+@RequestMapping("/api/v1/instructors/")
 @Tag(name = "Instructores",
 description = "Operaciones respecto a los instructores")
 public class InstructorController {

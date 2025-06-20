@@ -10,7 +10,7 @@ import io.swagger.v3.oas.annotations.responses.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/v1/users")
 @Tag(name = "Usuarios", description = "Operaciones respecto a los usuarios")
 public class UserController {
     @Autowired

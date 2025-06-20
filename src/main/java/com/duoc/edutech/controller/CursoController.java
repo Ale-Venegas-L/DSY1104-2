@@ -10,7 +10,7 @@ import io.swagger.v3.oas.annotations.responses.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
-@RequestMapping("/api/cursos")
+@RequestMapping("/api/v1/cursos")
 @Tag(name = "Curso",
 description = "Operaciones respecto a los materiales")
 public class CursoController {

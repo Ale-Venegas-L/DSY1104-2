@@ -10,7 +10,7 @@ import io.swagger.v3.oas.annotations.responses.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
-@RequestMapping("/api/materials")
+@RequestMapping("/api/v1/materials")
 @Tag(name = "Materiales",
 description = "Operaciones respecto a los materiales")
 public class MaterialController {

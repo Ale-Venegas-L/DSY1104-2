@@ -5,17 +5,17 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;
-import com.duoc.edutech.controller.UserControllerV2;
-import com.duoc.edutech.model.User;
+import com.duoc.edutech.controller.CursoControllerV2;
+import com.duoc.edutech.model.Curso;
 
 @Component
-public class UserModelAssembler implements RepresentationModelAssembler<User, EntityModel<User>>{
+public class CursoModelAssembler implements RepresentationModelAssembler<Curso, EntityModel<Curso>>{
     @SuppressWarnings("null")
     @Override
-    public EntityModel<User> toModel(User entity){
+    public EntityModel<Curso> toModel(Curso entity){
         return EntityModel.of(entity,
-        linkTo(methodOn(UserControllerV2.class).getUser(entity.getUsername())).withSelfRel(),
-        linkTo(methodOn(UserControllerV2.class).fetchUsers()).withRel("user")
+        linkTo(methodOn(CursoControllerV2.class).getCurso(entity.getIdCurso())).withSelfRel(),
+        linkTo(methodOn(CursoControllerV2.class).fetchCursos()).withRel("curso")
         );
     }
 }

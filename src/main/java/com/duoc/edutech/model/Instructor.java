@@ -3,6 +3,8 @@ package com.duoc.edutech.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -34,5 +36,6 @@ public class Instructor {
     private int numcel;
 
     @OneToMany(mappedBy = "instructor")
+    @JsonBackReference 
     private List<Curso> cursos = new ArrayList<>();
 }

@@ -62,6 +62,7 @@ public class DataLoader implements CommandLineRunner {
             curso.setNombreCurso(faker.computer().type());
             curso.setCosto(faker.number().numberBetween(500, 100000));
             curso.setDuracion(random.nextFloat());
+            // Assign a random instructor from the list
             curso.setInstructor(instructors.get(random.nextInt(instructors.size())));
             cursoRepo.save(curso);
         }

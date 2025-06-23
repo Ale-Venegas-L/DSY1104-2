@@ -22,5 +22,6 @@ public class Curso {
     private float duracion;
 
     @ManyToOne
+    @JoinColumn(name = "emailInst")
     private Instructor instructor;
 }

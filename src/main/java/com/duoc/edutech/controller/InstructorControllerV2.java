@@ -52,7 +52,7 @@ public class InstructorControllerV2 {
     }
 
     @Operation(summary = "Actualiza un instructor", description = "Actualiza todos los datos de un instructor, buscando por su nombre")
-    @PutMapping(value = "/{username}", produces = MediaTypes.HAL_JSON_VALUE)
+    @PutMapping(value = "/{email}", produces = MediaTypes.HAL_JSON_VALUE)
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "Instructor actualizado exitosamente"),
         @ApiResponse(responseCode = "400", description = "Error en formato"),
@@ -78,7 +78,7 @@ public class InstructorControllerV2 {
     }
 
     @Operation(summary = "Elimina un usuario", description = "Elimina un usuario, buscando por su nombre")
-    @DeleteMapping(value = "/{username}", produces = MediaTypes.HAL_JSON_VALUE)
+    @DeleteMapping(value = "/{email}", produces = MediaTypes.HAL_JSON_VALUE)
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "Usuario eliminado exitosamente"),
         @ApiResponse(responseCode = "400", description = "Error en formato"),

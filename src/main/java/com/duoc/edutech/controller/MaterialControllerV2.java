@@ -75,8 +75,8 @@ public class MaterialControllerV2 {
         .getMaterial(newMaterial.getId())).toUri()).body(assembler.toModel(newMaterial));
     }
 
-    @Operation(summary = "Elimina un usuario", description = "Elimina un usuario, buscando por su nombre")
-    @DeleteMapping(value = "/{username}", produces = MediaTypes.HAL_JSON_VALUE)
+    @Operation(summary = "Elimina un material", description = "Elimina un material, buscando por su código")
+    @DeleteMapping(value = "/{id}", produces = MediaTypes.HAL_JSON_VALUE)
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "Usuario eliminado exitosamente"),
         @ApiResponse(responseCode = "400", description = "Error en formato"),
